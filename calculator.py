@@ -7,6 +7,12 @@ def get_number(prompt):
             return float(num_str)
         print("Invalid input. Input must be positive or negative number.")
 
+def get_opertion(prompt):
+    while True:
+        opertion_sign = input(prompt)
+        if opertion_sign.isalpha():
+            return opertion_sign
+        print("Invalid input. Input must be sign from these list: ", operations_list)
 print("Calculator supports these operations", operations_list)
 
 num1 = get_number("Enter first number for calculations: ")
