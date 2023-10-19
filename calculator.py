@@ -10,20 +10,30 @@ def get_number(prompt):
 def get_opertion(prompt):
     while True:
         opertion_sign = input(prompt)
-        if opertion_sign.isalpha():
+        if opertion_sign in operations_list:
             return opertion_sign
         print("Invalid input. Input must be sign from these list: ", operations_list)
+
+def calculations(first_number, second_number, operation):
+    if operation == "+":
+        result = first_number + second_number
+        return result
+    if operation == "-":
+        result = first_number - second_number
+        return result
+    if operation == "*":
+        result = first_number * second_number
+        return result
+    if operation == "/":
+        result = first_number / second_number
+        return result
+
 print("Calculator supports these operations", operations_list)
 
 num1 = get_number("Enter first number for calculations: ")
 num2 = get_number("Enter second number for calculations: ")
-operation = input("Enter operations to do: ")
-
-def calculations(first_number, second_number, operation_sign):
-    if operation == "+":
-        result = float(first_number) + float(second_number)
-        return result
+operation = get_opertion("Enter operations to do: ")
 
 if operation in operations_list:
     result = calculations(num1, num2, operation)
-    print(result)
+    print("Result of calculations: ", result)
