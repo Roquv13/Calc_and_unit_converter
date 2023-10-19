@@ -1,24 +1,32 @@
-SI_mass = {'g':0.001, 'dag':0.01, 'kg':1.0, 't':1000}
-SI_len = {'mm':0.001, 'cm':0.01, 'm':1.0, 'km':1000.}
+import calculator
+import os
+def user_choice():
+    print("What do you want to do?")
+    user_input = int(input("1. Calculate numbers\n2. Convert units\n3. Exit\n"))
+    return user_input
 
-#Define convert function
-def convert(value, unit_in, unit_out):
-    if unit_in in SI_mass:
-        default_unit = SI_mass
-    elif unit_in in SI_len:
-        default_unit = SI_len
-    result = value * default_unit[unit_in]/default_unit[unit_out]
-    return result
+user_input = user_choice()
 
-# Mass converter
-print("Mass unit converter")
-print("It supports:", "\nMass: ", list(SI_mass.keys()), "\nLenght: ", list(SI_len.keys()))
+while user_input == 1 or 2 or 3:
+    if user_input == 1:
+        print("Calculator supports these operations", calculator.operations_list())
 
-# User input
-value = float(input("Enter value to convert: "))
-unit_in = input("Enter initial unit: ")
-unit_out = input("Enter unit to convert to: ")
+        num1 = calculator.get_number("Enter first number for calculations: ")
+        num2 = calculator.get_number("Enter second number for calculations: ")
+        operation = calculator.get_opertion("Enter operations to do: ")
 
-# Display result
-result = convert(value, unit_in, unit_out)
-print("Result: ", result, unit_out)
+        if operation in calculator.operations_list():
+            result = calculator.calculations(num1, num2, operation)
+            print("Result of calculations: ", result)
+
+
+        next_action = input("If you want to continue press ENTER")
+        if not next_action:
+            os.system('cls' if os.name == 'nt' else 'clear')
+        
+    elif user_input == 2:
+        print("2")
+    elif user_input == 3:
+        break
+    
+    user_input = user_choice()
