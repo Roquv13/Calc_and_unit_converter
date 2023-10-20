@@ -37,7 +37,10 @@ def calculations(first_number, second_number, operation):
         return result
     if operation == "root":
         result = first_number ** (1/second_number)
-        return result
+        if result % 1 > 0:
+            return int(result) + 1
+        else:
+            return int(result)
     if operation == "mod":
         result = first_number % second_number
         return result
