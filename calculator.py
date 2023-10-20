@@ -1,5 +1,5 @@
 def operations_list():
-    operations_list = ['+', '-', '*', '/']
+    operations_list = ['+', '-', '*', '/', '^']
     return operations_list
 
 def get_number(prompt):
@@ -31,6 +31,9 @@ def calculations(first_number, second_number, operation):
             print("You cannot divide by zero.")
             second_number = get_number("Enter second number for calculations:")
         result = first_number / second_number
+        return result
+    if operation == "^":
+        result = first_number ** second_number
         return result
 
 def get_number(prompt):
