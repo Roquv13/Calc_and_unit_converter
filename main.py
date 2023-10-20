@@ -27,16 +27,9 @@ while user_input == 1 or 2 or 3:
         next_action()
         
     elif user_input == 2:
-        unit_converter.units_list()
+        unit_converter.print_units_list()
         
-        # User input
-        value = unit_converter.get_value("Enter value to convert: ")
-        unit_in = unit_converter.get_unit("Enter initial unit: ")
-        unit_out = unit_converter.get_unit("Enter unit to convert to: ")
-
-        # Display result
-        result = unit_converter.convert(value, unit_in, unit_out)
-        print("Result: ", result, unit_out)
+        unit_converter.get_result()
 
         next_action()
     
