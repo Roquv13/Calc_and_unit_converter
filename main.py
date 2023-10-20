@@ -18,13 +18,7 @@ while user_input == 1 or 2 or 3:
     if user_input == 1:
         print("Calculator supports these operations", calculator.operations_list())
 
-        num1 = calculator.get_number("Enter first number for calculations: ")
-        num2 = calculator.get_number("Enter second number for calculations: ")
-        operation = calculator.get_opertion("Enter operations to do: ")
-
-        if operation in calculator.operations_list():
-            result = calculator.calculations(num1, num2, operation)
-            print("Result of calculations: ", result)
+        calculator.get_result()
 
         next_action()
         
