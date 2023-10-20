@@ -3,9 +3,13 @@ import os
 import unit_converter
 
 def user_choice():
-    print("What do you want to do?")
-    user_input = int(input("1. Calculate numbers\n2. Convert units\n3. Exit\n"))
-    return user_input
+    while True:
+        print("What do you want to do?")
+        user_input = input("1. Calculate numbers\n2. Convert units\n3. Exit\n")
+        if user_input == "":
+            print("Field cannot be empty.")
+        else:
+            return int(user_input)
 
 def next_action():
     action_continue = input("If you want to continue press ENTER")

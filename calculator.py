@@ -53,7 +53,7 @@ def get_result():
             num1 = get_number("Enter number to be exponentiated: ")
             num2 = get_number("Enter degree of exponentiation: ")
         elif operation == "root":
-            num1 = get_number("Enter number to calculate root")
+            num1 = get_number("Enter number to calculate root: ")
             num2 = get_number("Enter degree of root: ")
         else:
             num1 = get_number("Enter first number for calculations: ")
