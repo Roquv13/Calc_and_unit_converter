@@ -1,5 +1,5 @@
 def operations_list():
-    operations_list = ['+', '-', '*', '/', '^']
+    operations_list = ['+', '-', '*', '/', '^', 'mod']
     return operations_list
 
 def get_number(prompt):
@@ -34,6 +34,9 @@ def calculations(first_number, second_number, operation):
         return result
     if operation == "^":
         result = first_number ** second_number
+        return result
+    if operation == "mod":
+        result = first_number % second_number
         return result
 
 def get_number(prompt):
