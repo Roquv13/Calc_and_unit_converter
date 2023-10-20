@@ -27,5 +27,17 @@ def calculations(first_number, second_number, operation):
         result = first_number * second_number
         return result
     if operation == "/":
+        while second_number == 0:
+            print("You cannot divide by zero.")
+            second_number = get_number("Enter second number for calculations:")
         result = first_number / second_number
         return result
+
+def get_number(prompt):
+    while True:
+        num_str = input(prompt)
+        if num_str == "exit":
+            return num_str
+        if num_str.isdigit() or (num_str.startswith("-") and num_str[1:].isdigit()):
+            return float(num_str)
+        print("Invalid input. Please enter a number.")    
